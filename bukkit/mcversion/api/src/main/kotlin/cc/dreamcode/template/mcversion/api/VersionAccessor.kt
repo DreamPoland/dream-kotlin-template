@@ -1,4 +1,3 @@
-package cc.dreamcode.template.mcversion.api;
+package cc.dreamcode.template.mcversion.api
 
-public interface VersionAccessor {
-}
+interface VersionAccessor 

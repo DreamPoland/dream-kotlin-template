@@ -2,7 +2,6 @@ package cc.dreamcode.template.user
 
 import eu.okaeri.persistence.repository.DocumentRepository
 import eu.okaeri.persistence.repository.annotation.DocumentCollection
-import org.bukkit.entity.HumanEntity
 import java.util.*
 import java.util.concurrent.CompletableFuture
 
@@ -26,14 +25,6 @@ interface UserRepository : DocumentRepository<UUID, User> {
 
     fun findOrCreateByUUIDFuture(uuid: UUID): CompletableFuture<User> {
         return CompletableFuture.supplyAsync { findOrCreate(uuid, null) }
-    }
-
-    fun findOrCreateByHumanEntity(humanEntity: HumanEntity): User {
-        return findOrCreate(humanEntity.uniqueId, humanEntity.name)
-    }
-
-    fun findOrCreateByHumanEntityFuture(humanEntity: HumanEntity): CompletableFuture<User> {
-        return CompletableFuture.supplyAsync { findOrCreate(humanEntity.uniqueId, humanEntity.name) }
     }
 
     fun findByName(name: String, ignoreCase: Boolean): Optional<User> {

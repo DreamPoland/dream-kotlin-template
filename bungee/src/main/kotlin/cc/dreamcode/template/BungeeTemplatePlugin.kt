@@ -1,34 +1,27 @@
 package cc.dreamcode.template
 
-import cc.dreamcode.command.bukkit.BukkitCommandProvider
-import cc.dreamcode.menu.bukkit.BukkitMenuProvider
-import cc.dreamcode.menu.serdes.bukkit.okaeri.MenuBuilderSerdes
-import cc.dreamcode.notice.bukkit.BukkitNoticeProvider
-import cc.dreamcode.notice.bukkit.okaeri_serdes.BukkitNoticeSerdes
+import cc.dreamcode.command.bungee.BungeeCommandProvider
+import cc.dreamcode.notice.bungee.BungeeNoticeProvider
+import cc.dreamcode.notice.bungee.okaeri_serdes.BungeeNoticeSerdes
 import cc.dreamcode.platform.DreamVersion
-import cc.dreamcode.platform.bukkit.DreamBukkitPlatform
-import cc.dreamcode.platform.bukkit.component.*
+import cc.dreamcode.platform.bungee.DreamBungeePlatform
+import cc.dreamcode.platform.bungee.component.*
 import cc.dreamcode.platform.component.ComponentManager
 import cc.dreamcode.template.config.MessageConfig
 import cc.dreamcode.template.config.PluginConfig
-import cc.dreamcode.template.mcversion.VersionProvider
 import cc.dreamcode.template.user.UserRepository
 import eu.okaeri.configs.serdes.OkaeriSerdesPack
 import eu.okaeri.configs.serdes.SerdesRegistry
 import eu.okaeri.persistence.document.DocumentPersistence
-import eu.okaeri.tasker.bukkit.BukkitTasker
 
-class BukkitTemplatePlugin : DreamBukkitPlatform() {
+class BungeeTemplatePlugin : DreamBungeePlatform() {
     override fun load(componentManager: ComponentManager) {
-        bukkitTemplatePlugin = this
+        bungeeTemplatePlugin = this
     }
 
     override fun enable(componentManager: ComponentManager) {
-        this.registerInjectable(VersionProvider.versionAccessor)
-        this.registerInjectable(BukkitTasker.newPool(this))
-        this.registerInjectable(BukkitMenuProvider.create(this))
-        this.registerInjectable(BukkitNoticeProvider.create(this))
-        this.registerInjectable(BukkitCommandProvider.create(this, injector))
+        this.registerInjectable(BungeeNoticeProvider.create(this))
+        this.registerInjectable(BungeeCommandProvider.create(this, injector))
 
         componentManager.registerResolver(CommandComponentResolver::class.java)
         componentManager.registerResolver(ListenerComponentResolver::class.java)
@@ -37,10 +30,10 @@ class BukkitTemplatePlugin : DreamBukkitPlatform() {
 
         componentManager.registerComponent(MessageConfig::class.java) { messageConfig: MessageConfig ->
             this.getInject(
-                BukkitCommandProvider::class.java
-            ).ifPresent { bukkitCommandProvider: BukkitCommandProvider ->
-                bukkitCommandProvider.setNoPermissionMessage(messageConfig.noPermission)
-                bukkitCommandProvider.setNoPlayerMessage(messageConfig.notPlayer)
+                BungeeCommandProvider::class.java
+            ).ifPresent { bungeeCommandProvider: BungeeCommandProvider ->
+                bungeeCommandProvider.setNoPermissionMessage(messageConfig.noPermission)
+                bungeeCommandProvider.setNoPlayerMessage(messageConfig.notPlayer)
             }
         }
 
@@ -66,12 +59,11 @@ class BukkitTemplatePlugin : DreamBukkitPlatform() {
 
     override fun getPluginSerdesPack(): OkaeriSerdesPack {
         return OkaeriSerdesPack { registry: SerdesRegistry ->
-            registry.register(BukkitNoticeSerdes())
-            registry.register(MenuBuilderSerdes())
+            registry.register(BungeeNoticeSerdes())
         }
     }
 
     companion object {
-        lateinit var bukkitTemplatePlugin: BukkitTemplatePlugin
+        lateinit var bungeeTemplatePlugin: BungeeTemplatePlugin
     }
 }

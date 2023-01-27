@@ -1,4 +1,4 @@
-package cc.dreamcode.template.user
+package cc.dreamcode.template.customer
 
 import eu.okaeri.configs.annotation.NameModifier
 import eu.okaeri.configs.annotation.NameStrategy
@@ -11,7 +11,7 @@ import java.util.*
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Names(strategy = NameStrategy.HYPHEN_CASE, modifier = NameModifier.TO_LOWER_CASE)
-data class User(var name: String) : Document() {
+data class Customer(var name: String) : Document() {
     val uniqueId: UUID
         get() = path.toUUID()
 }

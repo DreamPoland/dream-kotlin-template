@@ -1,7 +1,7 @@
 package cc.dreamcode.template.config
 
-import cc.dreamcode.platform.bukkit.component.configuration.Configuration
-import cc.dreamcode.platform.bukkit.persistence.StorageConfig
+import cc.dreamcode.platform.discord4j.component.configuration.Configuration
+import cc.dreamcode.platform.discord4j.persistence.StorageConfig
 import eu.okaeri.configs.OkaeriConfig
 import eu.okaeri.configs.annotation.*
 
@@ -11,6 +11,9 @@ import eu.okaeri.configs.annotation.*
 class PluginConfig : OkaeriConfig() {
     @Comment("Debug pokazuje dodatkowe informacje do konsoli. Lepiej wylaczyc. :P")
     var debug = true
+
+    @Comment("Podaj token do bota z panelu developer'a discord")
+    var token = ""
 
     @Comment("Uzupelnij ponizsze menu danymi.")
     var storageConfig = StorageConfig()

@@ -2,7 +2,7 @@ package cc.dreamcode.template.user
 
 import eu.okaeri.persistence.repository.DocumentRepository
 import eu.okaeri.persistence.repository.annotation.DocumentCollection
-import org.bukkit.entity.HumanEntity
+import net.md_5.bungee.api.connection.ProxiedPlayer
 import java.util.*
 import java.util.concurrent.CompletableFuture
 
@@ -28,12 +28,12 @@ interface UserRepository : DocumentRepository<UUID, User> {
         return CompletableFuture.supplyAsync { findOrCreate(uuid, null) }
     }
 
-    fun findOrCreateByHumanEntity(humanEntity: HumanEntity): User {
-        return findOrCreate(humanEntity.uniqueId, humanEntity.name)
+    fun findOrCreateByHumanEntity(player: ProxiedPlayer): User {
+        return findOrCreate(player.uniqueId, player.name)
     }
 
-    fun findOrCreateByHumanEntityFuture(humanEntity: HumanEntity): CompletableFuture<User> {
-        return CompletableFuture.supplyAsync { findOrCreate(humanEntity.uniqueId, humanEntity.name) }
+    fun findOrCreateByHumanEntityFuture(player: ProxiedPlayer): CompletableFuture<User> {
+        return CompletableFuture.supplyAsync { findOrCreate(player.uniqueId, player.name) }
     }
 
     fun findByName(name: String, ignoreCase: Boolean): Optional<User> {

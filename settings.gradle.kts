@@ -1,0 +1,14 @@
+rootProject.name = "dream-kotlin-template"
+
+include("bukkit")
+include("bukkit:mcversion:api")
+include("bukkit:mcversion:v1_8_R3")
+include("bukkit:mcversion:v1_12_R1")
+include("bukkit:mcversion:v1_16_R3")
+include("bukkit:mcversion:v1_17_R1")
+include("bukkit:mcversion:v1_18_R2")
+include("bukkit:mcversion:v1_19_R2")
+
+include("bungee")
+include("cli")
+include("discord4j")
