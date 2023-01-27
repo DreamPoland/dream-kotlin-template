@@ -9,7 +9,7 @@ dependencies {
     compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
 
     // -- configs--
-    implementation("eu.okaeri:okaeri-configs-yaml-bungee:4.0.8")
+    implementation("eu.okaeri:okaeri-configs-yaml-bungee:4.0.9")
     implementation("eu.okaeri:okaeri-configs-serdes-bungee:4.0.8")
     implementation("eu.okaeri:okaeri-configs-serdes-commons:4.0.8")
 
