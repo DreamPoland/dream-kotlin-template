@@ -26,7 +26,7 @@ dependencies {
     implementation("eu.okaeri:okaeri-injector:2.1.0")
 
     // -- placeholders --
-    implementation("eu.okaeri:okaeri-placeholders-bungee:4.0.3")
+    implementation("eu.okaeri:okaeri-placeholders-bungee:4.0.4")
 
     // -- dream-platform --
     implementation("cc.dreamcode.platform:core:1.4.1")
