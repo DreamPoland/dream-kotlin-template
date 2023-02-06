@@ -35,7 +35,7 @@ dependencies {
     implementation("eu.okaeri:okaeri-placeholders-bukkit:4.0.4")
 
     // -- tasker --
-    implementation("eu.okaeri:okaeri-tasker-bukkit:1.1.9")
+    implementation("eu.okaeri:okaeri-tasker-bukkit:1.2.0")
 
     // -- Multi-Version Items helper --
     implementation("com.github.cryptomorin:XSeries:9.2.0")
