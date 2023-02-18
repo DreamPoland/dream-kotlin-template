@@ -37,9 +37,9 @@ subprojects {
     apply(plugin = "com.github.johnrengelman.shadow")
 
     dependencies {
-        compileOnly("org.projectlombok:lombok:1.18.24")
-        annotationProcessor("org.projectlombok:lombok:1.18.24")
-        testCompileOnly("org.projectlombok:lombok:1.18.24")
-        testAnnotationProcessor("org.projectlombok:lombok:1.18.24")
+        compileOnly("org.projectlombok:lombok:1.18.26")
+        annotationProcessor("org.projectlombok:lombok:1.18.26")
+        testCompileOnly("org.projectlombok:lombok:1.18.26")
+        testAnnotationProcessor("org.projectlombok:lombok:1.18.26")
     }
 }

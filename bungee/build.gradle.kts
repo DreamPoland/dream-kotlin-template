@@ -8,6 +8,22 @@ dependencies {
     // -- bungee-cord --
     compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
 
+    // -- dream-platform --
+    implementation("cc.dreamcode.platform:core:1.5.2")
+    implementation("cc.dreamcode.platform:bungee:1.5.2")
+
+    // -- dream-utilities --
+    implementation("cc.dreamcode:utilities:1.1.2")
+
+    // -- dream-notice --
+    implementation("cc.dreamcode.notice:core:1.2.2")
+    implementation("cc.dreamcode.notice:bungee:1.2.2")
+    implementation("cc.dreamcode.notice:bungee-okaeri-serdes:1.2.2")
+
+    // -- dream-command --
+    implementation("cc.dreamcode.command:core:1.2.4")
+    implementation("cc.dreamcode.command:bungee:1.2.4")
+
     // -- configs--
     implementation("eu.okaeri:okaeri-configs-yaml-bungee:4.0.9")
     implementation("eu.okaeri:okaeri-configs-serdes-bungee:4.0.9")
@@ -26,23 +42,7 @@ dependencies {
     implementation("eu.okaeri:okaeri-injector:2.1.0")
 
     // -- placeholders --
-    implementation("eu.okaeri:okaeri-placeholders-bungee:4.0.4")
-
-    // -- dream-platform --
-    implementation("cc.dreamcode.platform:core:1.4.2")
-    implementation("cc.dreamcode.platform:bungee:1.4.2")
-
-    // -- dream-utilities --
-    implementation("cc.dreamcode:utilities:1.1.1")
-
-    // -- dream-notice --
-    implementation("cc.dreamcode.notice:core:1.2.1")
-    implementation("cc.dreamcode.notice:bungee:1.2.1")
-    implementation("cc.dreamcode.notice:bungee-okaeri-serdes:1.2.1")
-
-    // -- dream-command --
-    implementation("cc.dreamcode.command:core:1.2.3")
-    implementation("cc.dreamcode.command:bungee:1.2.3")
+    implementation("eu.okaeri:okaeri-placeholders-bungee:4.0.7")
 }
 
 tasks.withType<ShadowJar> {
