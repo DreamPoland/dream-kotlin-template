@@ -12,7 +12,7 @@ dependencies {
     }
 
     // -- spigot api -- (base)
-    compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT")
 
     // -- dream-platform --
     implementation("cc.dreamcode.platform:core:1.5.3")
