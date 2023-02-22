@@ -33,7 +33,7 @@ class BungeeTemplatePlugin : DreamBungeePlatform() {
                 BungeeCommandProvider::class.java
             ).ifPresent { bungeeCommandProvider: BungeeCommandProvider ->
                 bungeeCommandProvider.setNoPermissionMessage(messageConfig.noPermission)
-                bungeeCommandProvider.setNoPlayerMessage(messageConfig.notPlayer)
+                bungeeCommandProvider.setNoPlayerMessage(messageConfig.noPlayer)
             }
         }
 

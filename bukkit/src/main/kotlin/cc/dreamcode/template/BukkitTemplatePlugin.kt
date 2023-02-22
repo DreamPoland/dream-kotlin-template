@@ -40,7 +40,7 @@ class BukkitTemplatePlugin : DreamBukkitPlatform() {
                 BukkitCommandProvider::class.java
             ).ifPresent { bukkitCommandProvider: BukkitCommandProvider ->
                 bukkitCommandProvider.setNoPermissionMessage(messageConfig.noPermission)
-                bukkitCommandProvider.setNoPlayerMessage(messageConfig.notPlayer)
+                bukkitCommandProvider.setNoPlayerMessage(messageConfig.noPlayer)
             }
         }
 
