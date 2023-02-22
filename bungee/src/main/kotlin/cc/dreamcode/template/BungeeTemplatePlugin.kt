@@ -57,9 +57,15 @@ class BungeeTemplatePlugin : DreamBungeePlatform() {
         return DreamVersion.create("Dream-Template", "1.0", "author")
     }
 
-    override fun getPluginSerdesPack(): OkaeriSerdesPack {
+    override fun getConfigurationSerdesPack(): OkaeriSerdesPack {
         return OkaeriSerdesPack { registry: SerdesRegistry ->
             registry.register(BungeeNoticeSerdes())
+        }
+    }
+
+    override fun getPersistenceSerdesPack(): OkaeriSerdesPack {
+        return OkaeriSerdesPack {
+
         }
     }
 

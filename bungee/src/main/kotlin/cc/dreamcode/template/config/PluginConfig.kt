@@ -13,5 +13,5 @@ class PluginConfig : OkaeriConfig() {
     var debug = true
 
     @Comment("Uzupelnij ponizsze menu danymi.")
-    var storageConfig = StorageConfig()
+    var storageConfig = StorageConfig("dreamtemplate")
 }

@@ -64,12 +64,19 @@ class BukkitTemplatePlugin : DreamBukkitPlatform() {
         return DreamVersion.create("Dream-Template", "1.0", "author")
     }
 
-    override fun getPluginSerdesPack(): OkaeriSerdesPack {
+    override fun getConfigurationSerdesPack(): OkaeriSerdesPack {
         return OkaeriSerdesPack { registry: SerdesRegistry ->
             registry.register(BukkitNoticeSerdes())
             registry.register(MenuBuilderSerdes())
         }
     }
+
+    override fun getPersistenceSerdesPack(): OkaeriSerdesPack {
+        return OkaeriSerdesPack {
+
+        }
+    }
+
 
     companion object {
         lateinit var bukkitTemplatePlugin: BukkitTemplatePlugin
